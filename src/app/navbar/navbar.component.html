@@ -1,0 +1,61 @@
+<!--
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/home" >Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/product">All Products</a></li>
+            <li><a class="dropdown-item" routerLink="/new-product">new product</a></li>
+            &lt;!&ndash;            <li><hr class="dropdown-divider"></li>&ndash;&gt;
+            &lt;!&ndash;            <li><a class="dropdown-item" href="#">Something else here</a></li>&ndash;&gt;
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li>
+          <a class="nav-link">
+            &lt;!&ndash;            {{authService.authenticatedUser!.username}}&ndash;&gt;
+          </a>
+        </li>
+        &lt;!&ndash;        <li>&ndash;&gt;
+        &lt;!&ndash;          <a class="btn nav-link" (click)="handleLogout()">&ndash;&gt;
+        &lt;!&ndash;            <i class="bi bi-box-arrow-right"></i>&ndash;&gt;
+        &lt;!&ndash;          </a>&ndash;&gt;
+        &lt;!&ndash;        </li>&ndash;&gt;
+      </ul>
+    </div>
+  </div>
+</nav>
+
+-->
+
+
+<nav class="p-3">
+  <ul class="nav nav-pills">
+    <li *ngFor="let action of actions">
+        <button routerLink="{{action.route}}"
+                (click)="handleCurrentAction(action)"
+                [class]="action == currentAction ? 'btn btn-success ms-1' : 'btn btn-outline-success'"
+        >
+          {{action.title}}
+          <i class="bi bi-{{action.icon}}"></i>
+        </button>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
